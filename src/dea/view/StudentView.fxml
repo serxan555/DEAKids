@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="bodybg" stylesheets="@../kids/image.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dea.controllers.StudentController">
+   <children>
+      <BorderPane layoutX="575.0" layoutY="225.0" prefHeight="700.0" prefWidth="1350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="studentsTableView" fixedCellSize="-1.0" onMouseClicked="#onStudentSelect" opacity="0.7" prefHeight="578.0" prefWidth="1019.0" styleClass="bodybg" stylesheets="@../kids/image.css" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="surnameCol" prefWidth="75.0" text="Surname" />
+                  <TableColumn fx:id="parentCol" prefWidth="75.0" text="Parent" />
+                  <TableColumn fx:id="birthdateCol" prefWidth="73.0" text="Birth Date" />
+                  <TableColumn fx:id="phoneCol" prefWidth="77.0" text="Phone" />
+                  <TableColumn fx:id="gmailCol" prefWidth="75.0" text="Gmail" />
+                  <TableColumn fx:id="gmailCodeCol" prefWidth="75.0" text="Gmail Code" />
+                  <TableColumn fx:id="groupNameCol" prefWidth="75.0" text="Group Name" />
+                  <TableColumn fx:id="statusCol" prefWidth="75.0" text="Status" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="5.0" right="5.0" />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+         <top>
+            <Label alignment="CENTER" opacity="0.8" prefHeight="102.0" prefWidth="677.0" text="DEVELOPIA ENGINEERING ACADEMY" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Algerian" size="40.0" />
+               </font>
+            </Label>
+         </top>
+         <left>
+            <VBox prefHeight="548.0" prefWidth="260.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Accordion fx:id="acardion" prefHeight="578.0" prefWidth="240.0">
+                    <panes>
+                      <TitledPane fx:id="titlePaneStudent" text=" Edit Student ">
+                        <content>
+                          <AnchorPane>
+                                 <children>
+                                    <TabPane layoutX="9.6" layoutY="27.6" prefHeight="522.0" prefWidth="228.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <tabs>
+                                        <Tab text="Edit Student ">
+                                          <content>
+                                            <AnchorPane>
+                                                   <children>
+                                                      <GridPane prefHeight="491.0" prefWidth="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                                              <content>
+                                                                <AnchorPane focusTraversable="true" prefHeight="397.0" prefWidth="227.0">
+                                                                     <children>
+                                                                        <VBox prefHeight="397.0" prefWidth="227.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <children>
+                                                                              <TextField fx:id="nameField" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" promptText="Name" style="-fx-background-radius: 20;">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="surnameField" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" promptText="Surname" style="-fx-background-radius: 20;">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="parentField" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" promptText="Parent" style="-fx-background-radius: 20;">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="phoneField" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" promptText="Phone" style="-fx-background-radius: 20;">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="gmailField" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" promptText="Gmail" style="-fx-background-radius: 20;">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="gmailCodeField" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" promptText="Gmail Code" style="-fx-background-radius: 20;">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <DatePicker fx:id="birthdateField" prefHeight="25.0" prefWidth="246.0" promptText="Date of Birth">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </DatePicker>
+                                                                              <ComboBox fx:id="comboBoxGroupName" onAction="#searchStudentForGroupName" prefWidth="199.0" promptText="Group Name" style="-fx-background-radius: 20;">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="10.0" right="20.0" top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </ComboBox>
+                                                                              <HBox prefHeight="36.0" prefWidth="239.0">
+                                                                                 <children>
+                                                                                    <CheckBox fx:id="useCheckBox" mnemonicParsing="false" onAction="#useLesson" prefHeight="17.0" prefWidth="0.0">
+                                                                                       <HBox.margin>
+                                                                                          <Insets left="11.0" top="18.0" />
+                                                                                       </HBox.margin>
+                                                                                    </CheckBox>
+                                                                                    <TextField fx:id="lessonDateField" disable="true" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" prefWidth="100.0" promptText="Lesson Date" style="-fx-background-radius: 20;">
+                                                                                       <HBox.margin>
+                                                                                          <Insets top="15.0" />
+                                                                                       </HBox.margin>
+                                                                                    </TextField>
+                                                                                    <TextField fx:id="lessonTimeField" disable="true" layoutX="20.0" layoutY="27.0" onKeyReleased="#studentAdvancedSearch" prefHeight="25.0" prefWidth="100.0" promptText="Lesson Time" style="-fx-background-radius: 20;">
+                                                                                       <HBox.margin>
+                                                                                          <Insets left="5.0" right="20.0" top="15.0" />
+                                                                                       </HBox.margin>
+                                                                                    </TextField>
+                                                                                 </children>
+                                                                              </HBox>
+                                                                              <CheckBox fx:id="statusChechBox" mnemonicParsing="false" onMouseReleased="#studentAdvancedSearch" prefHeight="25.0" prefWidth="82.0" text="Action" textFill="#6b6b6b">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="11.0" right="10.0" top="10.0" />
+                                                                                 </VBox.margin>
+                                                                                 <font>
+                                                                                    <Font name="System Bold" size="16.0" />
+                                                                                 </font>
+                                                                              </CheckBox>
+                                                                              <HBox prefHeight="58.0" prefWidth="239.0">
+                                                                                 <children>
+                                                                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#addOrUpdate" prefHeight="40.0" prefWidth="90.0" style="-fx-background-radius: 20;" textFill="#00ffd0">
+                                                                                       <font>
+                                                                                          <Font name="Arial Bold" size="18.0" />
+                                                                                       </font>
+                                                                                       <graphic>
+                                                                                          <ImageView fitHeight="28.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                                                             <image>
+                                                                                                <Image url="@../files/OK.png" />
+                                                                                             </image>
+                                                                                          </ImageView>
+                                                                                       </graphic>
+                                                                                       <HBox.margin>
+                                                                                          <Insets left="10.0" right="10.0" top="10.0" />
+                                                                                       </HBox.margin>
+                                                                                       <cursor>
+                                                                                          <Cursor fx:constant="HAND" />
+                                                                                       </cursor>
+                                                                                    </Button>
+                                                                                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#delete" prefHeight="40.0" prefWidth="90.0" style="-fx-background-radius: 20;">
+                                                                                       <cursor>
+                                                                                          <Cursor fx:constant="HAND" />
+                                                                                       </cursor>
+                                                                                       <graphic>
+                                                                                          <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                                             <image>
+                                                                                                <Image url="@../files/DeleteIcon.png" />
+                                                                                             </image>
+                                                                                          </ImageView>
+                                                                                       </graphic>
+                                                                                       <HBox.margin>
+                                                                                          <Insets left="30.0" right="20.0" top="10.0" />
+                                                                                       </HBox.margin>
+                                                                                    </Button>
+                                                                                 </children>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="10.0" />
+                                                                                 </VBox.margin>
+                                                                              </HBox>
+                                                                              <HBox prefHeight="115.0" prefWidth="239.0" />
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                             <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../files/User%20Icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                        </Tab>
+                                        <Tab text="Payment">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="161.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="235.0" text="Student Payment">
+                                                               <font>
+                                                                  <Font name="System Bold" size="20.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets top="40.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <TextField fx:id="studentNameField" onKeyReleased="#studentAdvancedSearch" prefHeight="30.0" promptText="Name" style="-fx-background-radius: 20;">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" right="10.0" top="30.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="paymentField" prefHeight="30.0" promptText="Payment" style="-fx-background-radius: 20;">
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" right="10.0" top="20.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <Label fx:id="labelUserPayment" alignment="CENTER" prefHeight="37.0" prefWidth="200.0" text="Salary:">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="21.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets left="10.0" right="10.0" top="70.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                             <graphic>
+                                                <ImageView pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../files/Payment%20Icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="19.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../files/Student%20Icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                      </TitledPane>
+                        <TitledPane fx:id="titlePaneEditUser" text=" Edit User">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="393.0" prefWidth="228.0">
+                                 <children>
+                                    <VBox layoutX="74.0" layoutY="161.0" prefHeight="522.0" prefWidth="248.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="235.0" text="User İnformations">
+                                             <VBox.margin>
+                                                <Insets top="40.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="USER_NAME" prefHeight="27.0" promptText="Name" style="-fx-background-radius: 50;">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="30.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="USER_SURNAME" layoutX="20.0" layoutY="60.0" prefHeight="27.0" promptText="Surname" style="-fx-background-radius: 50;">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="USERNAMEforUSER" disable="true" layoutX="20.0" layoutY="204.0" prefHeight="27.0" promptText="Username" style="-fx-background-radius: 50;">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <TextField fx:id="USER_EMAIL" layoutX="10.0" layoutY="85.0" prefHeight="27.0" promptText="E-mail" style="-fx-background-radius: 50;">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <PasswordField fx:id="CURRENT_PASSWORD" prefHeight="27.0" promptText="Current Password" style="-fx-background-radius: 50;">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </PasswordField>
+                                          <PasswordField fx:id="NEW_PASSWORD" layoutX="10.0" layoutY="278.0" prefHeight="27.0" promptText="New Password" style="-fx-background-radius: 50;">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </PasswordField>
+                                          <Button mnemonicParsing="false" onAction="#updateUserInformations" prefHeight="40.0" prefWidth="238.0" style="-fx-background-radius: 100;" text=" UPDATE USER">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="40.0" />
+                                             </VBox.margin>
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="24.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../files/Update%20Icon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                          </content>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../files/Edit%20Icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TitledPane>
+                    </panes>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </Accordion>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
